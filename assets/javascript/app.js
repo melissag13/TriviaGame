@@ -35,7 +35,7 @@ var questions = [
 }
 
 ];
-//for loop for jquery
+//"for" loop for jquery
  $.each(questions, function(index,value){
 //making a list in jquery
 
