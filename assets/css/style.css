@@ -10,17 +10,32 @@ body {
 		
 
 }
+
+header {
+	background: url("../images/trivia.gif") no-repeat center center;
+	height: 225px;
+	background-color: white;
+
+
+}
+
 ul {
-background-color: #ffbf00;
+	background-color: #ffbf00;
+
 	width: 75%;
 	margin: 0 auto;
 }
+
+#quiz-question {
+	text-align: center;
+	font-size: 25px;
+}
+
 button{
   margin:auto;
   display:block;
 }
 
-/* BUTTON STYLES */
 button{
   padding:16px 32px;
   font-family:helvetica;
@@ -31,23 +46,9 @@ button{
   border:0;
   font-weight:100;
 }
+
 button:hover{
   background: #ff1a1a;
 }
 
-/*.wrapper {
-	text-align: center;
-}
-#submit {
-	position: absolute;
-	top: 40%;
 
-}*/
-
-header {
-	background: url("../images/trivia.gif") no-repeat center center;
-	height: 225px;
-	background-color: white;
-
-
-}

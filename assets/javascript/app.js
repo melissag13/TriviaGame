@@ -32,6 +32,36 @@ var questions = [
 	choices: ["this", "that", "then"],
 	correctAnswer: "answer"
 
+},
+{
+	question:  "How do",
+	choices: ["this", "that", "then"],
+	correctAnswer: "answer"
+
+},
+{
+	question:  "How do",
+	choices: ["this", "that", "then"],
+	correctAnswer: "answer"
+
+},
+{
+	question:  "How do",
+	choices: ["this", "that", "then"],
+	correctAnswer: "answer"
+
+},
+{
+	question:  "How do",
+	choices: ["this", "that", "then"],
+	correctAnswer: "answer"
+
+},
+{
+	question:  "How do",
+	choices: ["this", "that", "then"],
+	correctAnswer: "answer"
+
 }
 
 ];
