@@ -5,13 +5,13 @@ var questions = [
 {
 	question:  "How do",
 	choices: ["this", "that", "then"],
-	correctAnswer: "answer"
+	correctAnswer: [2]
 
 },
 {
 	question:  "How do",
 	choices: ["this", "that", "then"],
-	correctAnswer: "answer"
+	correctAnswer: [0]
 
 },
 {
@@ -71,18 +71,24 @@ var questions = [
 
  		var $li=$("<li></li>");
  		$li.html(index + 1+". "+value.question);
+ 		$li.attr("correctAnswer", value.correctAnswer)
 //looping through question choices
  		$.each(value.choices, function(choiceIndex, choice){
 
- 			var $input=$("<input></input>");
- 			$input.attr("type", "radio");
- 			$input.attr("name","question"+index);
- 			$input.attr("value", choice);
- 			$li.append($input);
+ 			var $input=$("<input/>");
+	 			$input.attr("type", "radio");
+	 			$input.attr("name","question"+index);
+	 			$input.attr("value", choice);
+				$li.append($input);
+
+ 			var label = $("<label/>")
+	 			label.text("type", "radio");
+	 			label.attr("name","question"+index);
+	 			label.attr("value", choice);
+ 				$li.append(label);
 
 
  		})
-var $correct =$("<input></input>");
 //append to id
 $("#quiz-question").append($li);
 
@@ -94,46 +100,47 @@ $("#quiz-question").append($li);
 // $("#start").on('click', startTimer);
 
 
-
+var count;
+var counter;
 
 
 
 
 $("#submit").on("click", function(){
 
-	console.log ($("input[name=question0]:checked").val());
+	$('#start').removeClass("hidden");
+    clearInterval(counter); 
+    $(".blanket").addClass("hidden");
+
+	// console.log ($("input[name=question0]:checked").val());
 
 
 })
 
-var count;
-var counter;
+
+
 
 function startTimer()
 {
+	var startClock = 60, timer = setInterval(function() {
+    $("#count").html(count--);
+    if(count == 1) clearInterval(timer);
+}, 1000);
     
-    $('#start').show();
-    clearInterval(counter);  
+     
 }
 
-$(document).ready(function(){
-    startTimer();
-    $('#start').click(function(){
-        $('#start').hide();
-        
-        $('#count').animate({width: 'toggle'});
-        count=65;
-        counter=setInterval(timer, 1000);
-        function timer(){
-          count=count-1;
-          if (count <= 0){
-            clearInterval(counter);
-            return;  }
-         }
-    });
+
+startTimer();
+		$('#start').click(function(){
+	  	$(".blanket").removeClass("hidden");
+	  	$(this).addClass("hidden");
+	  
+
+});
 
    
-});
+
 
 
 
