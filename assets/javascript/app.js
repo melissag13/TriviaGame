@@ -91,6 +91,13 @@ $("#quiz-question").append($li);
 
  });
 
+// $("#start").on('click', startTimer);
+
+
+
+
+
+
 
 $("#submit").on("click", function(){
 
@@ -99,7 +106,34 @@ $("#submit").on("click", function(){
 
 })
 
+var count;
+var counter;
 
+function startTimer()
+{
+    
+    $('#start').show();
+    clearInterval(counter);  
+}
+
+$(document).ready(function(){
+    startTimer();
+    $('#start').click(function(){
+        $('#start').hide();
+        
+        $('#count').animate({width: 'toggle'});
+        count=65;
+        counter=setInterval(timer, 1000);
+        function timer(){
+          count=count-1;
+          if (count <= 0){
+            clearInterval(counter);
+            return;  }
+         }
+    });
+
+   
+});
 
 
 

@@ -26,6 +26,15 @@ ul {
 	margin: 0 auto;
 }
 
+#startClock {
+	background-color: gray;
+	text-align: center;
+	font-size: 30px;
+	width: 75%;
+	margin: 0 auto;
+}
+
+
 #quiz-question {
 	text-align: center;
 	font-size: 25px;
