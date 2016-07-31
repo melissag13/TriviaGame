@@ -60,12 +60,12 @@ button:hover{
   background: #ff1a1a;
 }
 
-.startBtn {
-	background-color: #ffbf00;
-	padding: 100px;
-	width: 75%;
-	margin: 0 auto;
+#start {
+	margin-top: 220px;
 }
+
+
+
 .hidden {
 	display: none;
 }
