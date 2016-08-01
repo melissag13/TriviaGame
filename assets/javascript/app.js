@@ -115,37 +115,20 @@ $("#quiz-question").append($li);
 // $("#start").on('click', startTimer);
 
 
-var count;
-var counter;
-var timer = 60;
-
-
-
-$("#submit").on("click", function(){
-
-	$('#start').removeClass("hidden");
-    clearInterval(counter); 
-    $(".blanket").addClass("hidden");
-   
-
-	// console.log ($("input[name=question0]:checked").val());
-
-
-})
-
-var counts = 60, timer = setInterval(function() {
-    $("#count").html(counts--);
-    if(counts == 1) clearInterval(timer);
-}, 1000);
-
+// var count;
+// var counter;
+var timer;
 
 
 function startTimer()
 {
-	
+	var counts = 60, timer = setInterval(function() {
+    $("#count").html(counts--);
+    if(counts <= -1) clearInterval(timer);
+}, 1000);
     
      
-}
+};
 
 
 startTimer();
@@ -157,7 +140,21 @@ startTimer();
 
 });
 
+
+
+
+
+
+$("#submit").on("click", function(){
+
+	$('#start').removeClass("hidden");
+    clearInterval(timer); 
+    $(".blanket").addClass("hidden");
    
+
+	// console.log ($("input[name=question0]:checked").val());
+
+})  
 
 
 
