@@ -63,6 +63,7 @@ var questions = [
 }
 
 ];
+// console.log("correct answer: ", questions[i].choices[answer]);
 //"for" loop for jquery
  $.each(questions, function(index,value){
 //making a list in jquery
@@ -119,6 +120,7 @@ $("#quiz-question").append($li);
 
 var answerCorrect = 0;
 var answerWrong = 0;
+var notAnswered = 0;
 var timer;
 
 
@@ -143,22 +145,32 @@ startTimer();
 });
 // function check (){
 	function questChecker (){
-		$("input:checked").each(function(i, input) {
-			var val = $(input).val();
-			var answer = $(input).attr("correctAnswer");
-			if(val == answer){
-			correct++;
-		}
-			var wrong = $(input).attr("answerWrong");
-			if(val != answer){
-			wrong++;
-		}
-	});
+        $("input:checked").each(function(i, input) {
+            var val = $(input).val();
+            // console.log("i", i);
+            // console.log("input", input);
+            // console.log("val", val);
+            var answerIndex = $(input).parent().attr("correctAnswer");
+            console.log("answer", answer);
+            console.log("correct answer: ", questions[i].choices[answerIndex]);
+            var answer = questions[i].choices[answerIndex];
+            
+            if(val == answer){
+                answerCorrect++;
+            }
+            //var wrong = $(input).attr("answerWrong");
+            //if(val != answer){
+            else {
+                answerWrong++;            
+            }
+           
+            
+        });
+        notAnswered = questions.length - (answerCorrect + answerWrong);
+    }
 
-}
 
-
-	console.log ($("input[name=question0]:checked").val());
+	// console.log ($("input[name=question0]:checked").val());
 
 // }  
 $("#results").hide();
@@ -170,6 +182,7 @@ $("#submit").on("click", function(){
 	$("#results").show();
 	$("#correctAns").text(answerCorrect);
 	$("#wrongAns").text(answerWrong);
+	$("#notAns").text(notAnswered);
 	$("#quiz-question").hide();
 	$("#submit").hide();
 	$("#count").hide ();

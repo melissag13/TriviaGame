@@ -1,4 +1,4 @@
-html {
+html, body {
 	background: url("../images/question_mark.jpg");
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
@@ -6,10 +6,6 @@ html {
 	background-size: cover;
 }
 
-body {
-		
-
-}
 
 header {
 	background: url("../images/trivia.gif") no-repeat center center;
