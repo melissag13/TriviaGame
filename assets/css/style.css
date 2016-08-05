@@ -76,4 +76,10 @@ button:hover{
 	display: none;
 }
 
-
+#results {
+	background-color: #ffbf00;
+	text-align: center;
+	font-size: 18px;
+	width: 75%;
+	margin: 0 auto;
+}

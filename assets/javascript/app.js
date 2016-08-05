@@ -19,7 +19,6 @@ var questions = [
 	correctAnswer: 1
 
 },
-
 {
 	question:  "How many muscles are there in an elephant's trunk?"+"<br/>",
 	choices: ["400", "4,000", "40,000"],
@@ -116,6 +115,10 @@ $("#quiz-question").append($li);
 
 // var count;
 // var counter;
+
+
+var answerCorrect = 0;
+var answerWrong = 0;
 var timer;
 
 
@@ -138,25 +141,47 @@ startTimer();
 
 
 });
+// function check (){
+	function questChecker (){
+		$("input:checked").each(function(i, input) {
+			var val = $(input).val();
+			var answer = $(input).attr("correctAnswer");
+			if(val == answer){
+			correct++;
+		}
+			var wrong = $(input).attr("answerWrong");
+			if(val != answer){
+			wrong++;
+		}
+	});
 
+}
 
-
-
-
-
-$("#submit").on("click", function(){
-
-	$('#start').removeClass("hidden");
-    clearInterval(timer); 
-    $(".blanket").addClass("hidden");
-   
 
 	console.log ($("input[name=question0]:checked").val());
 
-})  
+// }  
+$("#results").hide();
+// Done button function to display results
 
+$("#submit").on("click", function(){
 
+	questChecker();
+	$("#results").show();
+	$("#correctAns").text(answerCorrect);
+	$("#wrongAns").text(answerWrong);
+	$("#quiz-question").hide();
+	$("#submit").hide();
+	$("#count").hide ();
 
+	// $('#start').removeClass("hidden");
+ //    clearInterval(timer); 
+ //    $(".blanket").addClass("hidden");
+   
+});
+
+// check();
+// questChecker();
 
 
 
