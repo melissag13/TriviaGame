@@ -33,12 +33,12 @@ var questions = [
 },
 {
 	question:  "How long does it take a human blood cell to make a complete circuit of the human body?"+"<br/>",
-	choices: ["one minutes", "five minutes", "ten minutes"],
+	choices: ["one minute", "five minutes", "ten minutes"],
 	correctAnswer: 0
 
 },
 {
-	question:  "What kind of car travel through time in Back to the Future?"+"<br/>",
+	question:  "What kind of car travels through time in the movie Back to the Future?"+"<br/>",
 	choices: ["Lotus", "DeLorean", "Fiero"],
 	correctAnswer: 1
 
