@@ -1,5 +1,5 @@
 # TriviaGame
-![alt tag]( )
+![alt tag](https://github.com/melissag13/TriviaGame/blob/master/Screen%20Shot%202016-08-18%20at%2012.02.15%20PM.png)
 
 ###Objectives
 * Create a trivia game
